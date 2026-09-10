@@ -1,0 +1,50 @@
+[
+    {
+        "activity_id": "A001",
+        "activity_name": "Community Clean-up Campaign",
+        "gcgo_theme": "Sustainability",
+        "location": "Kigali Community Centre",
+        "date": "2026-09-12",
+        "volunteer_name": "Kofi Annan",
+        "hours_contributed": 3.5,
+        "people_reached": 45,
+        "status": "completed",
+        "notes": "Volunteers cleaned the community area and shared waste management tips."
+    },
+    {
+        "activity_id": "A002",
+        "activity_name": "Youth Coding Workshop",
+        "gcgo_theme": "Education",
+        "location": "ALU Campus",
+        "date": "2026-09-15",
+        "volunteer_name": "Yash",
+        "hours_contributed": 4.0,
+        "people_reached": 30,
+        "status": "planned",
+        "notes": "Introductory Python workshop for young learners."
+    },
+    {
+        "activity_id": "A003",
+        "activity_name": "Health Awareness Visit",
+        "gcgo_theme": "Health",
+        "location": "Local Health Centre",
+        "date": "2026-09-18",
+        "volunteer_name": "Margaret",
+        "hours_contributed": 2.5,
+        "people_reached": 60,
+        "status": "completed",
+        "notes": "Basic health awareness session with community members."
+    },
+    {
+        "activity_id": "A004",
+        "activity_name": "Food Donation Drive",
+        "gcgo_theme": "Community Development",
+        "location": "Nyamirambo Community Hall",
+        "date": "2026-09-20",
+        "volunteer_name": "Kofi Annan",
+        "hours_contributed": 5.0,
+        "people_reached": 80,
+        "status": "planned",
+        "notes": "Food donation activity for low-income families."
+    }
+]
