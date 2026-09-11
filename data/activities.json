@@ -46,5 +46,41 @@
         "people_reached": 80,
         "status": "planned",
         "notes": "Food donation activity for low-income families."
+    },
+    {
+        "activity_id": "A005",
+        "activity_name": "Chris Bergue",
+        "gcgo_theme": "HealthCare",
+        "location": "Grand bAIE,Mauritius",
+        "date": "2026-09-24",
+        "volunteer_name": "Chris Bergue",
+        "hours_contributed": 9.0,
+        "people_reached": 50,
+        "status": "completed",
+        "notes": "It was a good experience"
+    },
+    {
+        "activity_id": "A006",
+        "activity_name": "Sport",
+        "gcgo_theme": "Health",
+        "location": "Grand Baie",
+        "date": "2026-12-09",
+        "volunteer_name": "Chris Bergue",
+        "hours_contributed": 9.0,
+        "people_reached": 12,
+        "status": "completed",
+        "notes": "not bad"
+    },
+    {
+        "activity_id": "A007",
+        "activity_name": "umbuntu",
+        "gcgo_theme": "education",
+        "location": "Accra",
+        "date": "2025-09-9",
+        "volunteer_name": "Kofi Annan",
+        "hours_contributed": 3.0,
+        "people_reached": 9,
+        "status": "planned",
+        "notes": "not so good"
     }
 ]

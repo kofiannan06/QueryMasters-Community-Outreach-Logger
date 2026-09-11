@@ -1,30 +1,36 @@
 QUERYMASTERS COMMUNITY OUTREACH REPORT
 =====================================
 
-Total activities: 4
-Total volunteer hours: 15.0
-Total people reached: 215
+Total activities: 7
+Total volunteer hours: 36.0
+Total people reached: 286
 
-Top volunteer: Kofi Annan with 8.5 hours
+Top volunteer: Chris Bergue with 18.0 hours
 
 Activities by GCGO theme:
 - Sustainability: 1
 - Education: 1
-- Health: 1
+- Health: 2
 - Community Development: 1
+- HealthCare: 1
+- education: 1
 
 Activities by status:
-- completed: 2
-- planned: 2
+- completed: 4
+- planned: 3
 
 Volunteer hours by GCGO theme:
 - Sustainability: 3.5
 - Education: 4.0
-- Health: 2.5
+- Health: 11.5
 - Community Development: 5.0
+- HealthCare: 9.0
+- education: 3.0
 
 People reached by GCGO theme:
 - Sustainability: 45
 - Education: 30
-- Health: 60
+- Health: 72
 - Community Development: 80
+- HealthCare: 50
+- education: 9
