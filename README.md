@@ -1,103 +1,40 @@
-# Community Outreach Activity Logger
+# QueryMasters Community Outreach Logger
 
-## 1. Problem Statement
+QueryMasters Community Outreach Logger is a modular Python command-line application designed to record, manage, search, and analyse community outreach activities. The system helps users track volunteer participation, outreach locations, GCGO themes, contributed hours, people reached, activity status, and notes using a simple terminal-based menu.
 
-Community outreach activities usually involve important information that must be recorded for reference, reporting, and future planning. These activities may involve multiple volunteers, different locations, activity dates, GCGO themes, hours contributed, people reached, and activity statuses.
+This project was developed for the **Introduction to Programming and Databases** formative assessment. It uses beginner-level Python concepts such as functions, loops, lists, dictionaries, validation, exception handling, JSON file storage, and multiple modules.
 
-Without a well-organised system, it can become difficult to track volunteer participation, monitor outreach progress, update activity records, and understand the overall impact of outreach efforts. Manual records can also lead to missing information, repeated entries, and difficulty generating accurate summaries.
+## Project Scenario
 
-The QueryMasters Community Outreach Activity Logger aims to provide a simple Python command-line system for recording, managing, searching, and analysing outreach activity data. The application uses a menu-driven interface and stores records in a JSON file so that data can be saved and reloaded after the program closes.
+The selected scenario is:
 
-## 2. Functional Requirements
+**Community Outreach Activity Logger**
 
-The application should allow users to:
+The application supports small outreach teams by helping them organise activity records and generate useful summaries from stored data. It is designed to remain within the assessment scope by using file-based storage instead of a database and a terminal interface instead of a GUI.
 
-1. Add a new outreach activity.
-2. View all recorded outreach activities.
-3. Update an existing outreach activity using its activity ID.
-4. Delete or archive an outreach activity.
-5. Confirm before deleting a record to avoid accidental data loss.
-6. Search and filter outreach activities by volunteer name, GCGO theme, location, status, or date.
-7. Automatically generate unique activity IDs such as A001, A002, and A003.
-8. Save activity records to a JSON file.
-9. Load previously saved records when the application starts.
-10. Validate user input before storing records.
-11. Handle invalid input and file errors without crashing.
-12. Generate total volunteer hours.
-13. Generate activities grouped by GCGO theme.
-14. Generate activities grouped by status.
-15. Generate total people reached.
-16. Generate people reached by GCGO theme.
-17. Identify the top volunteer by total hours contributed.
-18. Export a full outreach report to a text file.
+## Key Features
 
-## 3. Data Fields
+- Add new outreach activity records
+- View all saved outreach activities
+- Update existing activities using activity ID
+- Delete or archive activities
+- Confirm before deleting records
+- Search activities by volunteer name, GCGO theme, location, status, or date
+- Automatically generate activity IDs such as `A001`, `A002`, and `A003`
+- Save and reload records using JSON file storage
+- Validate user input before saving records
+- Handle missing or damaged files using `try/except`
+- Show total volunteer hours
+- Show activities grouped by GCGO theme
+- Show activities grouped by status
+- Show total people reached
+- Show people reached by GCGO theme
+- Show top volunteer by total hours
+- Export a full report to a text file
 
-Each outreach activity will be represented as a Python dictionary and stored inside a list. The list of records will be saved in data/activities.json.
-
-| Field | Purpose |
-|---|---|
-| activity_id | Unique identifier for the activity, generated automatically by the system. |
-| activity_name | Name or title of the outreach activity. |
-| gcgo_theme | GCGO theme associated with the activity, such as education, health, sustainability, or community development. |
-| location | Location where the activity takes place. |
-| date | Date on which the activity occurs, written in YYYY-MM-DD format. |
-| volunteer_name | Name of the volunteer linked to the activity record. |
-| hours_contributed | Number of hours contributed by the volunteer. |
-| people_reached | Number of people reached through the outreach activity. |
-| status | Current activity status: planned, completed, cancelled, or archived. |
-| notes | Additional information about the activity. |
-
-## 4. Validation Requirements
-
-The application should validate the following inputs before storing records:
-
-| Input | Validation Rule |
-|---|---|
-| Activity name | Must not be empty. |
-| GCGO theme | Must not be empty. |
-| Location | Must not be empty. |
-| Date | Must follow the YYYY-MM-DD format. |
-| Volunteer name | Must not be empty. |
-| Hours contributed | Must be a positive number greater than 0. |
-| People reached | Must be 0 or a positive whole number. |
-| Status | Must be one of: planned, completed, cancelled, or archived. |
-
-The system should use validation and try/except error handling to prevent crashes when users enter incorrect values or when file problems occur.
-
-## 5. File Storage Requirements
-
-The application will use file-based storage instead of a database, as required by the assessment.
-
-The main data file will be:
+## Project Architecture
 
 ```text
-data/activities.json
-
-## 6. Analysis and Reporting Requirements
-The application should include more than two reporting features to provide useful outreach insights.
-Required reports include:
-
-1. Total volunteer hours.
-2. Activities grouped by GCGO theme.
-3. Activities grouped by status.
-4. Total people reached.
-5. People reached by GCGO theme.
-6. Top volunteer by total hours contributed.
-7. Exported full summary report.
-These reports help users understand volunteer effort, activity progress, and community impact.
-
-7. GCGO Link
-This project connects to Global Challenges and Global Opportunities because community outreach activities often support social impact goals such as education, health, sustainability, and community development.
-For example:
-- Education outreach activities can support learning access and digital skills.
-- Health outreach activities can support awareness and community well-being.
-- Sustainability activities can support environmental responsibility.
-- Community development activities can support local improvement and inclusion.
-By tracking activities, volunteer hours, and people reached, the system helps users understand how outreach work contributes to positive community impact.
-
-
-8. Proposed File Structure
 QueryMasters-Community-Outreach-Logger/
 │
 ├── main.py
@@ -111,49 +48,153 @@ QueryMasters-Community-Outreach-Logger/
 └── data/
     ├── activities.json
     └── outreach_report.txt
+Architecture Explanation
+File / Folder	Purpose
+main.py	Runs the command-line interface, displays the menu, collects user input, and connects all modules together.
+data_store.py	Handles file persistence by loading activities from JSON, saving activities to JSON, and exporting reports to TXT.
+validation.py	Contains input validation functions for required text, dates, numbers, people reached, and activity status.
+processing.py	Contains search, filtering, calculations, report logic, and automatic activity ID generation.
+data/activities.json	Stores all outreach activity records as a list of dictionaries.
+data/outreach_report.txt	Stores the exported summary report generated by the application.
+requirements_note.md	Explains the problem statement, requirements, data fields, validation rules, GCGO link, and success criteria.
+sources_ai_disclosure.md	Lists sources used and explains how AI assistance was used responsibly.
+README.md	Provides project overview, architecture, features, setup, and usage instructions.
+Data Model
+Each outreach activity is stored as a dictionary.
 
-9. Success Criteria
-The project will be successful if:
-1. The application runs in the terminal using python main.py.
-2. The menu remains active until the user chooses to exit.
-3. Users can add, view, update, delete, archive, search, and filter activity records.
-4. Activity records are saved and reloaded using JSON file storage.
-5. Invalid menu choices and invalid input are handled safely.
-6. At least two analysis/reporting features work correctly.
-7. Additional reports provide useful summaries of outreach impact.
-8. The report export feature creates a readable text file.
-9. The code is separated into clear modules and functions.
-10. The team can explain the code and features during the demonstration.
+Example record:
 
+{
+    "activity_id": "A001",
+    "activity_name": "Community Clean-up Campaign",
+    "gcgo_theme": "Sustainability",
+    "location": "Kigali Community Centre",
+    "date": "2026-09-12",
+    "volunteer_name": "Kofi Annan",
+    "hours_contributed": 3.5,
+    "people_reached": 45,
+    "status": "completed",
+    "notes": "Volunteers cleaned the community area and shared waste management tips."
+}
+All activity dictionaries are stored inside a list in:
 
-10. Scope
-This project will use:
-- Python 3 standard library
-- Variables
-- if, elif, and else
-- for and while loops
-- Functions
-- Lists
-- Dictionaries
-- Searching and filtering
-- Basic calculations
-- Input validation
-- try/except
-- JSON file handling
-- Multiple Python files/modules
-This project will not use:
-- Databases
-- Web applications
-- Graphical user interfaces
-- External Python packages
-- Object-oriented class design
+data/activities.json
+Main Menu
+When the program runs, the user sees a numbered menu:
 
+===== QUERYMASTERS COMMUNITY OUTREACH LOGGER =====
+1. Add outreach activity
+2. View all activities
+3. Update activity
+4. Delete or archive activity
+5. Search activities
+6. Show total volunteer hours
+7. Show activities by GCGO theme
+8. Show activities by status
+9. Show volunteer hours by GCGO theme
+10. Show total people reached
+11. Show people reached by GCGO theme
+12. Show top volunteer
+13. Export full report to text file
+14. Save and exit
+How the Application Works
+The program starts from main.py.
+main.py calls load_activities() from data_store.py.
+Saved records are loaded from data/activities.json.
+The menu is displayed to the user.
+The user chooses an action.
+The program validates input using validation.py.
+The program processes searches, updates, calculations, and reports using processing.py.
+When records change, the program saves them back to data/activities.json.
+The user can export a summary report to data/outreach_report.txt.
+The program exits only when the user chooses the save and exit option.
+Requirements
+Python 3.x
+No external packages required
+This project uses only Python standard library modules:
 
-11. Module Responsibilities
-File    Responsibility
-main.py Runs the command-line menu and connects user choices to the correct functions.
-data_store.py   Loads activities, saves activities, and exports reports using files.
-validation.py   Checks user input before records are saved.
-processing.py   Handles searching, filtering, calculations, reports, and activity ID generation.
-data/activities.json    Stores outreach activity records.
-data/outreach_report.txt    Stores the exported report summary.
+json
+os
+datetime
+How to Run
+Clone or download the repository, then open the project folder in a terminal.
+
+Run:
+
+python main.py
+If your system uses python3, run:
+
+python3 main.py
+Example Workflow
+1. Run python main.py
+2. Choose option 1 to add an outreach activity
+3. Enter the activity details
+4. Choose option 2 to view all saved activities
+5. Choose option 5 to search activities
+6. Choose option 6, 7, 8, 9, 10, 11, or 12 to view reports
+7. Choose option 13 to export a full report
+8. Choose option 14 to save and exit
+Validation Rules
+Input	Rule
+Activity name	Cannot be empty
+GCGO theme	Cannot be empty
+Location	Cannot be empty
+Date	Must follow YYYY-MM-DD
+Volunteer name	Cannot be empty
+Hours contributed	Must be greater than 0
+People reached	Must be 0 or a positive whole number
+Status	Must be planned, completed, cancelled, or archived
+Reports
+The application can generate the following reports:
+
+Report	Purpose
+Total volunteer hours	Shows total time contributed by volunteers
+Activities by GCGO theme	Shows how activities are distributed across themes
+Activities by status	Shows planned, completed, cancelled, and archived activities
+Volunteer hours by GCGO theme	Shows where volunteer time is being spent
+Total people reached	Shows the overall outreach impact
+People reached by GCGO theme	Shows impact by global challenge theme
+Top volunteer	Identifies the volunteer with the highest total hours
+Exported full report	Saves a readable summary to data/outreach_report.txt
+GCGO Link
+This project connects to Global Challenges and Global Opportunities because community outreach activities often support education, health, sustainability, reduced inequality, and community development.
+
+By tracking volunteer hours, activities, locations, and people reached, the application helps users understand the impact of outreach work and supports better planning for future community initiatives.
+
+Assessment Scope
+This project uses:
+
+Variables
+if, elif, and else
+for and while loops
+Functions
+Lists
+Dictionaries
+Searching and filtering
+Basic calculations
+Input validation
+try and except
+JSON file handling
+Multiple Python files/modules
+This project does not use:
+
+Databases
+Web frameworks
+Graphical user interfaces
+External Python packages
+Object-oriented class design
+Team Responsibilities
+Team Member	Responsibility
+Margaret	Requirements note, README support, AI disclosure, demo preparation, and documentation
+Yash	Menu-driven CLI, add/view/update/delete features, and search/filter
+Kofi	JSON persistence, validation, analysis reports, extra features, and final integration testing
+Repository Contents Checklist
+main.py
+data_store.py
+validation.py
+processing.py
+README.md
+requirements_note.md
+sources_ai_disclosure.md
+data/activities.json
+data/outreach_report.txt
